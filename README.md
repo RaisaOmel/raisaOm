@@ -16,7 +16,23 @@ num2 = input('введите число 2 ').strip() #1734
 if len(num1) < len(num2):
     num1, num2 = num2, num1
 num2=num2.zfill(len(num1))
-str_=''
+str_='' 
 for i in range(0,len(num1)):
     str_+= str((int(num1[i])+int(num2[i])) % 10)
 print(str_) #1180
+
+задача 2
+Разбить строку без split
+
+test=input() #'This_is_a_test_string'
+elem='_'
+start=0
+lst=[]
+while test.count(elem,start)>0:
+    ind=test.index(elem,start)
+    if ind>start:
+       lst.append(test[start:ind])
+    start=ind+1
+if start<len(test)-1:
+    lst.append(test[start:])
+print(lst)
